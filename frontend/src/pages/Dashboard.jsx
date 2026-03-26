@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";   // ✅ FIXED
+import { useState, useEffect } from "react";   
 import DonutChart from "../components/DonutChart";
 import ExpenseList from "../components/ExpenseList";
 
