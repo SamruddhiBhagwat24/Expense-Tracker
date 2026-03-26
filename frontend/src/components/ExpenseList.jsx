@@ -8,7 +8,6 @@ function ExpenseList({ expenses, setExpenses }) {
     category: "Food"
   });
 
-  // DELETE
   const handleDelete = async (id) => {
     const token = localStorage.getItem("token");
 
@@ -22,7 +21,6 @@ function ExpenseList({ expenses, setExpenses }) {
     setExpenses(prev => prev.filter(exp => exp._id !== id));
   };
 
-  // START EDIT
   const handleEdit = (exp) => {
     setEditId(exp._id);
     setEditData({
@@ -31,7 +29,6 @@ function ExpenseList({ expenses, setExpenses }) {
     });
   };
 
-  // SAVE EDIT
   const handleSave = async (id) => {
   const token = localStorage.getItem("token");
 
@@ -47,7 +44,6 @@ function ExpenseList({ expenses, setExpenses }) {
 
     const updated = await res.json();
 
-    // ✅ VERY IMPORTANT (prevents white screen)
     if (!res.ok || !updated) {
       console.error("Update failed:", updated);
       return;
